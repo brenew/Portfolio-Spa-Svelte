@@ -1,5 +1,5 @@
 <script>
-    import Card from "./Card.svelte";
+    import Project from "./Project.svelte";
     import { projects } from "../data.js";
 
 	let index = 0;
@@ -11,6 +11,7 @@
             name: projects[count].title,
             text: projects[count].content,
             media: projects[count].image,
+            media2: projects[count].webp,
             tech: projects[count].tags,
             link: projects[count].url
         };
@@ -51,10 +52,10 @@
         </button>
     </div>
 
-    <Card title={data.name} description={data.text} image={data.media} tags={data.tech} url={data.link}/>
+    <Project title={data.name} description={data.text} image={data.media} image2={data.media2} tags={data.tech} url={data.link}/>
 
     <!-- {#each projects as project, i}
-        <Card title={project.title} description={project.content} image={project.image} tags={project.tags} url={project.url}/>
+        <Project title={project.title} description={project.content} image={project.image} tags={project.tags} url={project.url}/>
     {/each} -->
 </section>
 
